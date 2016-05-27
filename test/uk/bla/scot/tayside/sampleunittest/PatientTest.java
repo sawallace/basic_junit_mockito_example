@@ -1,5 +1,8 @@
-package uk.nhs.scot.tayside.sampleunittest;
+package uk.bla.scot.tayside.sampleunittest;
 
+import uk.bla.scot.tayside.sampleunittest.Contact;
+import uk.bla.scot.tayside.sampleunittest.EmptyValueException;
+import uk.bla.scot.tayside.sampleunittest.Patient;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;

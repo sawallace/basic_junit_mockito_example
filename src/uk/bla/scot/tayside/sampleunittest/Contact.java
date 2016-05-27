@@ -1,4 +1,4 @@
-package uk.nhs.scot.tayside.sampleunittest;
+package uk.bla.scot.tayside.sampleunittest;
 
 /**
  * This class represents a contact, which is a basic person and a phone number.

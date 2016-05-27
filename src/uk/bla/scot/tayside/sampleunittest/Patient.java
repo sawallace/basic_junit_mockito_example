@@ -1,4 +1,4 @@
-package uk.nhs.scot.tayside.sampleunittest;
+package uk.bla.scot.tayside.sampleunittest;
 
 import java.util.ArrayList;
 

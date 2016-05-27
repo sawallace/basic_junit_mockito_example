@@ -1,4 +1,4 @@
-package uk.nhs.scot.tayside.sampleunittest;
+package uk.bla.scot.tayside.sampleunittest;
 
 /**
  * This is a custom exception. I have created this a a very simple example of a custom exception.

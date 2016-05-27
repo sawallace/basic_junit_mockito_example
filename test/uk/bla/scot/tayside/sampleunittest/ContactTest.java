@@ -1,5 +1,6 @@
-package uk.nhs.scot.tayside.sampleunittest;
+package uk.bla.scot.tayside.sampleunittest;
 
+import uk.bla.scot.tayside.sampleunittest.Contact;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
