@@ -1,8 +1,5 @@
 package uk.bla.scot.tayside.sampleunittest;
 
-import uk.bla.scot.tayside.sampleunittest.Contact;
-import uk.bla.scot.tayside.sampleunittest.EmptyValueException;
-import uk.bla.scot.tayside.sampleunittest.Patient;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -186,8 +183,7 @@ public class PatientTest {
     
     /**
      * Test {@link Patient.setChiNumber()} method with valid data.
-     * 
-     * @throws uk.nhs.scot.tayside.sampleunittest.EmptyValueException
+     * @throws uk.bla.scot.tayside.sampleunittest.EmptyValueException
      */
     @Test
     public void testSetChiNumber_goodCase() throws EmptyValueException {
@@ -199,8 +195,7 @@ public class PatientTest {
     
     /**
      * Test {@link Patient.setChiNumber()} method with empty string passed in.
-     * 
-     * @throws uk.nhs.scot.tayside.sampleunittest.EmptyValueException
+     * @throws uk.bla.scot.tayside.sampleunittest.EmptyValueException
      */
     @Test(expected=EmptyValueException.class)
     public void testSetChiNumber_emptyString() throws EmptyValueException {
@@ -210,8 +205,7 @@ public class PatientTest {
     
     /**
      * Test {@link Patient.setChiNumber()} method with null passed in.
-     * 
-     * @throws uk.nhs.scot.tayside.sampleunittest.EmptyValueException
+     * @throws uk.bla.scot.tayside.sampleunittest.EmptyValueException
      */
     @Test(expected=EmptyValueException.class)
     public void testSetChiNumber_null() throws EmptyValueException {
