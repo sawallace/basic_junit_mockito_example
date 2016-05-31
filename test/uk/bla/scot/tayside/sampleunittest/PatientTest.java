@@ -44,20 +44,26 @@ public class PatientTest {
         String mockContactsForename1 = "MockSteven";
         String mockContactsSurname1 = "MockWallace";
         String mockContactsPhoneNumber1 = "00000 112233";
-        String mockContactsForename2 = "MockSteven";
-        String mockContactsSurname2 = "MockWallace";
-        String mockContactsPhoneNumber2 = "00000 112233";
+        String mockContactsForename2 = "MockSteven2";
+        String mockContactsSurname2 = "MockWallace2";
+        String mockContactsPhoneNumber2 = "00000 1122332";
         
         // Create and train mock Contact object to return some real data.
         Contact mockContact = mock(Contact.class);
-        when(mockContact.getForename()).thenReturn(mockContactsForename1).thenReturn(mockContactsForename2);
-        when(mockContact.getSurname()).thenReturn(mockContactsSurname1).thenReturn(mockContactsSurname2);
-        when(mockContact.getPhoneNumber()).thenReturn(mockContactsPhoneNumber1).thenReturn(mockContactsPhoneNumber2);
+        when(mockContact.getForename()).thenReturn(mockContactsForename1);
+        when(mockContact.getSurname()).thenReturn(mockContactsSurname1);
+        when(mockContact.getPhoneNumber()).thenReturn(mockContactsPhoneNumber1);
+        
+        // Create and train mock Contact object to return some real data.
+        Contact mockContact2 = mock(Contact.class);
+        when(mockContact2.getForename()).thenReturn(mockContactsForename2);
+        when(mockContact2.getSurname()).thenReturn(mockContactsSurname2);
+        when(mockContact2.getPhoneNumber()).thenReturn(mockContactsPhoneNumber2);
         
         // Create arraylist of mock contacts
         ArrayList<Contact> contacts = new ArrayList<>();
         contacts.add(mockContact);
-        contacts.add(mockContact);
+        contacts.add(mockContact2);
         
         this.objectUnderTest = new Patient(patientsForename,patientsSurname,patientsChi,contacts);
         
@@ -67,7 +73,7 @@ public class PatientTest {
         assertEquals(this.objectUnderTest.getChiNumber(), patientsChi);
         assertEquals(this.objectUnderTest.getFamilyMembersPhoneNumbers().size(), 2);
         assertEquals(this.objectUnderTest.getFamilyMembersPhoneNumbers().get(0), mockContactsForename1+" "+mockContactsSurname1+": "+mockContactsPhoneNumber1);
-        assertEquals(this.objectUnderTest.getFamilyMembersPhoneNumbers().get(0), mockContactsForename2+" "+mockContactsSurname2+": "+mockContactsPhoneNumber2);
+        assertEquals(this.objectUnderTest.getFamilyMembersPhoneNumbers().get(1), mockContactsForename2+" "+mockContactsSurname2+": "+mockContactsPhoneNumber2);
     }
     
     /**
@@ -83,20 +89,26 @@ public class PatientTest {
         String mockContactsForename1 = "";
         String mockContactsSurname1 = "";
         String mockContactsPhoneNumber1 = "";
-        String mockContactsForename2 = "";
-        String mockContactsSurname2 = "";
-        String mockContactsPhoneNumber2 = "";
+        String mockContactsForename2 = "2";
+        String mockContactsSurname2 = "2";
+        String mockContactsPhoneNumber2 = "2";
         
         // Create and train mock Contact object to return some real data.
         Contact mockContact = mock(Contact.class);
-        when(mockContact.getForename()).thenReturn(mockContactsForename1).thenReturn(mockContactsForename2);
-        when(mockContact.getSurname()).thenReturn(mockContactsSurname1).thenReturn(mockContactsSurname2);
-        when(mockContact.getPhoneNumber()).thenReturn(mockContactsPhoneNumber1).thenReturn(mockContactsPhoneNumber2);
+        when(mockContact.getForename()).thenReturn(mockContactsForename1);
+        when(mockContact.getSurname()).thenReturn(mockContactsSurname1);
+        when(mockContact.getPhoneNumber()).thenReturn(mockContactsPhoneNumber1);
+        
+        // Create and train mock Contact object to return some real data.
+        Contact mockContact2 = mock(Contact.class);
+        when(mockContact2.getForename()).thenReturn(mockContactsForename2);
+        when(mockContact2.getSurname()).thenReturn(mockContactsSurname2);
+        when(mockContact2.getPhoneNumber()).thenReturn(mockContactsPhoneNumber2);
         
         // Create arraylist of mock contacts
         ArrayList<Contact> contacts = new ArrayList<>();
         contacts.add(mockContact);
-        contacts.add(mockContact);
+        contacts.add(mockContact2);
         
         this.objectUnderTest = new Patient(patientsForename,patientsSurname,patientsChi,contacts);
         
@@ -106,7 +118,7 @@ public class PatientTest {
         assertEquals(this.objectUnderTest.getChiNumber(), patientsChi);
         assertEquals(this.objectUnderTest.getFamilyMembersPhoneNumbers().size(), 2);
         assertEquals(this.objectUnderTest.getFamilyMembersPhoneNumbers().get(0), mockContactsForename1+" "+mockContactsSurname1+": "+mockContactsPhoneNumber1);
-        assertEquals(this.objectUnderTest.getFamilyMembersPhoneNumbers().get(0), mockContactsForename2+" "+mockContactsSurname2+": "+mockContactsPhoneNumber2);
+        assertEquals(this.objectUnderTest.getFamilyMembersPhoneNumbers().get(1), mockContactsForename2+" "+mockContactsSurname2+": "+mockContactsPhoneNumber2);
     }
     
     /**

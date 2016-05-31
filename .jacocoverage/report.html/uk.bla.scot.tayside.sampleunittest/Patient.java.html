@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Patient.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;JUnitMockitoExample&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">uk.bla.scot.tayside.sampleunittest</a> &gt; <span class="el_source">Patient.java</span></div><h1>Patient.java</h1><pre class="source lang-java linenums">package uk.bla.scot.tayside.sampleunittest;
+
+import java.util.ArrayList;
+
+/**
+ * This class represents a patient.
+ * 
+ * @author swallace3
+ */
+public class Patient {
+
+    private String forename;
+    private String surname;
+    private String chiNumber;
+    private final ArrayList&lt;Contact&gt; familyMembers;
+    
+    /**
+     * Default constructor
+     */
+<span class="fc" id="L20">    public Patient() {</span>
+<span class="fc" id="L21">        this.familyMembers = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L22">        this.forename = &quot;&quot;;</span>
+<span class="fc" id="L23">        this.surname = &quot;&quot;;</span>
+<span class="fc" id="L24">        this.chiNumber = &quot;&quot;;</span>
+<span class="fc" id="L25">    }</span>
+
+    /**
+     * Constructor with arguments
+     * 
+     * @param forename Patients forename
+     * @param surname Patients surname
+     * @param chiNumber Patients chi number (10 digit long)
+     * @param familyMembers Details of family members: array list of {@link Contact}
+     * 
+     */
+<span class="fc" id="L36">    public Patient(String forename, String surname, String chiNumber, ArrayList&lt;Contact&gt; familyMembers) {</span>
+<span class="fc" id="L37">        this.forename = forename;</span>
+<span class="fc" id="L38">        this.surname = surname;</span>
+<span class="fc" id="L39">        this.chiNumber = chiNumber;</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if(familyMembers == null)</span>
+<span class="fc" id="L41">            this.familyMembers = new ArrayList&lt;&gt;();</span>
+        else
+<span class="fc" id="L43">            this.familyMembers = familyMembers;</span>
+<span class="fc" id="L44">    }</span>
+    
+    public void addFamilyMember(Contact familyMember) {
+<span class="fc" id="L47">        familyMembers.add(familyMember);</span>
+<span class="fc" id="L48">    }</span>
+    
+    public ArrayList&lt;String&gt; getFamilyMembersPhoneNumbers() {
+<span class="fc" id="L51">        ArrayList&lt;String&gt; numberDetails = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        for (Contact familyMember : familyMembers) {</span>
+<span class="fc" id="L53">            numberDetails.add(familyMember.getForename() + &quot; &quot; + familyMember.getSurname() + &quot;: &quot; + familyMember.getPhoneNumber());</span>
+<span class="fc" id="L54">        }</span>
+<span class="fc" id="L55">        return numberDetails;</span>
+    }
+
+    public String getForename() {
+<span class="fc" id="L59">        return forename;</span>
+    }
+
+    public void setForename(String forename) {
+<span class="fc" id="L63">        this.forename = forename;</span>
+<span class="fc" id="L64">    }</span>
+
+    public String getSurname() {
+<span class="fc" id="L67">        return surname;</span>
+    }
+
+    public void setSurname(String surname) {
+<span class="fc" id="L71">        this.surname = surname;</span>
+<span class="fc" id="L72">    }</span>
+
+    public String getChiNumber() {
+<span class="fc" id="L75">        return chiNumber;</span>
+    }
+
+    public void setChiNumber(String chiNumber) throws EmptyValueException {
+<span class="fc bfc" id="L79" title="All 4 branches covered.">        if(chiNumber == null || chiNumber.isEmpty())</span>
+<span class="fc" id="L80">            throw new EmptyValueException();</span>
+<span class="fc" id="L81">        this.chiNumber = chiNumber;</span>
+<span class="fc" id="L82">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
